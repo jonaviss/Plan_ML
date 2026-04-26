@@ -1,1 +1,343 @@
 
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Trabajo MINTRAB - Movilidad Laboral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --mintrab-blue-deep: #002D72;   /* Azul Marino Principal */
+            --mintrab-blue-gov: #0096D1;    /* Celeste Gobierno */
+            --mintrab-accent: #EAB308;      /* Dorado/Amarillo Refinado */
+            --mintrab-gray-bg: #F1F5F9;
+        }
+
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--mintrab-gray-bg);
+            color: #1E293B;
+        }
+
+        .text-mintrab-blue { color: var(--mintrab-blue-deep); }
+        .bg-mintrab-blue { background-color: var(--mintrab-blue-deep); }
+        .bg-mintrab-gov { background-color: var(--mintrab-blue-gov); }
+        .border-mintrab-gov { border-color: var(--mintrab-blue-gov); }
+
+        .government-bar {
+            background: linear-gradient(to right, #002D72, #0096D1, #002D72);
+            height: 6px;
+            width: 100%;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #002D72 0%, #004b87 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+
+        .card-elegant {
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-elegant:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -10px rgba(0, 45, 114, 0.1);
+        }
+
+        .step-active {
+            border: 2px solid var(--mintrab-blue-gov);
+            background: white;
+            position: relative;
+        }
+
+        .step-active::before {
+            content: "FASE ACTUAL";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--mintrab-blue-gov);
+            color: white;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 2px 14px;
+            border-radius: 99px;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .responsible-tag {
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--mintrab-blue-gov);
+            border-radius: 2px;
+        }
+
+        .accent-dot {
+            height: 8px;
+            width: 8px;
+            background-color: var(--mintrab-blue-gov);
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Barra de Gobierno Superior -->
+    <div class="government-bar"></div>
+
+    <!-- Header / Hero Section -->
+    <header class="hero-section text-white py-16 px-6">
+        <div class="hero-pattern"></div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10">
+            <div class="md:w-3/5 text-center md:text-left">
+                <div class="flex items-center space-x-2 mb-6 justify-center md:justify-start">
+                    <span class="bg-blue-400/20 text-blue-100 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/10">
+                        DIRECCIÓN DE SISTEMAS DE INFORMACIÓN (DISI)
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight text-white">
+                    Actualización: <br>
+                    <span class="text-blue-300">sistema de movilidad laboral</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-50 font-light mb-10 max-w-lg leading-relaxed">
+                    Estrategia de unificación sistémica bajo el ciclo de vida institucional del MINTRAB.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <div class="flex items-center space-x-2 text-xs font-semibold bg-white/10 px-4 py-2.5 rounded-xl backdrop-blur-md border border-white/5">
+                        <i class="fas fa-file-signature text-blue-300"></i>
+                        <span>DISI-FO-002-SOLICITUD DE ACTUALIZACIÓN DE SISTEMAS DE INFORMACIÓN</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badge Fase Actual -->
+            <div class="mt-12 md:mt-0 bg-white p-10 rounded-[2rem] text-center shadow-2xl border-t-8 border-mintrab-blue-gov w-full md:w-auto">
+                <p class="text-mintrab-blue text-[10px] font-black tracking-[0.2em] uppercase mb-4 text-center">Ciclo de Vida del Software</p>
+                <div class="text-9xl font-black text-mintrab-blue leading-none tracking-tighter">01</div>
+                <p class="text-gray-800 font-extrabold text-lg uppercase mt-4">Recopilación de<br>Requerimientos</p>
+                <div class="mt-6 flex items-center justify-center space-x-2 bg-blue-50 py-2 px-4 rounded-full">
+                    <span class="flex h-2 w-2 rounded-full bg-blue-500"></span>
+                    <span class="text-blue-600 text-[10px] font-bold uppercase tracking-widest text-center">Fase en Ejecución</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ciclo de Vida del Proyecto Detallado -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-mintrab-blue uppercase tracking-tight pb-4 section-title relative inline-block text-center">Ciclo de Vida del Proyecto (SDLC)</h2>
+                <p class="text-gray-500 mt-4 text-sm font-medium">Metodología estandarizada para la gestión de proyectos DISI</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Fase 1 - Activa -->
+                <div class="card-elegant p-8 step-active">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-mintrab-blue font-black text-3xl">01</div>
+                        <span class="responsible-tag bg-blue-100 text-blue-700">Responsable: DISI</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-800 mb-3 uppercase tracking-tight">Recopilación de Requerimientos</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed font-medium">
+                        <strong class="text-gray-400 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de levantamiento donde se identifican las necesidades del negocio, las reglas legales y los objetivos que debe cumplir el software.
+                    </p>
+                </div>
+
+                <!-- Fase 2 -->
+                <div class="card-elegant p-8 border-gray-100 opacity-80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-gray-300 font-black text-3xl">02</div>
+                        <span class="responsible-tag bg-gray-100 text-gray-500">Responsable: DISI</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-tight">Análisis y Diseño</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong class="text-gray-300 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de arquitectura donde se definen los procesos técnicos, el modelado de datos y el diseño visual de las interfaces de usuario.
+                    </p>
+                </div>
+
+                <!-- Fase 3 -->
+                <div class="card-elegant p-8 border-gray-100 opacity-80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-gray-300 font-black text-3xl">03</div>
+                        <span class="responsible-tag bg-gray-100 text-gray-500">Responsable: DISI</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-tight">Desarrollo</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong class="text-gray-300 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de construcción técnica donde los ingenieros codifican las funcionalidades según los requerimientos y el diseño técnico aprobado.
+                    </p>
+                </div>
+
+                <!-- Fase 4 -->
+                <div class="card-elegant p-8 border-gray-100 opacity-80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-gray-300 font-black text-3xl">04</div>
+                        <span class="responsible-tag bg-blue-50 text-blue-400 border border-blue-100">Responsable: Ente Rector</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-tight">Pruebas de Aceptación (QA)</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong class="text-gray-300 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de validación funcional donde el Ente Rector certifica que el software cumple fielmente con los procesos operativos definidos.
+                    </p>
+                </div>
+
+                <!-- Fase 5 -->
+                <div class="card-elegant p-8 border-gray-100 opacity-80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-gray-300 font-black text-3xl">05</div>
+                        <span class="responsible-tag bg-blue-50 text-blue-400 border border-blue-100">Responsable: Ente Rector</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-tight">Capacitación</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong class="text-gray-300 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de transferencia de conocimiento hacia los usuarios finales para asegurar el uso correcto y eficiente de la herramienta institucional.
+                    </p>
+                </div>
+
+                <!-- Fase 6 -->
+                <div class="card-elegant p-8 border-gray-100 opacity-80">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="text-gray-300 font-black text-3xl">06</div>
+                        <span class="responsible-tag bg-gray-100 text-gray-500">Responsable: DISI</span>
+                    </div>
+                    <h3 class="font-bold text-base text-gray-700 mb-3 uppercase tracking-tight">Implementación</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        <strong class="text-gray-300 block mb-1 uppercase text-[10px]">Objetivo:</strong>
+                        Fase de despliegue oficial y puesta en marcha del sistema en el entorno de producción para el servicio ministerial.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrategia de Trabajo Colaborativa -->
+    <section class="py-24 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-mintrab-blue-gov font-bold text-xs uppercase tracking-widest mb-4 block text-center lg:text-left">Metodología Operativa</span>
+                <h2 class="text-4xl font-black text-mintrab-blue mb-8 leading-tight text-center lg:text-left">Diagnóstico para <br>Reingeniería de Procesos</h2>
+                
+                <div class="space-y-8">
+                    <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-mintrab-blue-gov">
+                        <h4 class="font-bold text-gray-800 mb-2">Construcción Conjunta de Solicitudes</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            Sesiones de acompañamiento con cada enlace para el llenado conjunto del formato <strong>DISI-FO-002-SOLICITUD DE ACTUALIZACIÓN DE SISTEMAS DE INFORMACIÓN</strong>. Esta co-creación garantiza que el requerimiento técnico esté alineado a la necesidad operativa real de cada área.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-gray-300">
+                        <h4 class="font-bold text-gray-800 mb-2">Triangulación de Validación</h4>
+                        <ul class="space-y-3 text-xs text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-file-circle-check text-mintrab-blue-gov mt-1 mr-3"></i>
+                                <span><strong>Procesos Documentados:</strong> Verificación de los manuales y flujos vigentes en conjunto con la normativa operativa.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-laptop-code text-mintrab-blue-gov mt-1 mr-3"></i>
+                                <span><strong>Plataforma Actual:</strong> Evaluación técnica de las funcionalidades que ya posee la plataforma de movilidad.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-file-excel text-mintrab-blue-gov mt-1 mr-3"></i>
+                                <span><strong>Gestión Real (Controles):</strong> Análisis de los controles internos y documentos externos utilizados actualmente por el personal.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-mintrab-blue rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -bottom-10 -right-10 opacity-10">
+                    <i class="fas fa-folder-tree text-[200px]"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-8 italic">Áreas de Movilidad Laboral</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Perfilamiento</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Capacitación</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Reclutamiento</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Promoción Internacional</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10 text-blue-200">
+                        <span class="accent-dot bg-blue-300"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Registro y Estadística</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Intermediación Consular</span>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-white/5 p-3 rounded-xl border border-white/10">
+                        <span class="accent-dot"></span>
+                        <span class="text-xs font-bold uppercase tracking-wider">Reclutadoras</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Formal -->
+    <footer class="bg-gray-50 py-12 px-6 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col items-center">
+            <div class="flex items-center space-x-4 mb-6">
+                <i class="fas fa-landmark text-mintrab-blue text-2xl"></i>
+                <div class="h-6 w-px bg-gray-300"></div>
+                <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Ministerio de Trabajo y Previsión Social - Guatemala</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+```
